@@ -7,15 +7,12 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-// document.body.className = Theme.LIGHT;
-
-const switchToggle = document.querySelector('#theme-switch-toggle')
-const dishesMenu = document.querySelector('.js-menu')
-const markUp = dish(menu)
+const switchToggle = document.querySelector('#theme-switch-toggle');
+const dishesMenu = document.querySelector('.js-menu');
+const markUp = dish(menu);
 
 
-dishesMenu.insertAdjacentHTML('beforeend', markUp)
-
+dishesMenu.insertAdjacentHTML('beforeend', markUp);
 
 class BodyTheme{
     constructor({ selector}) {
@@ -52,14 +49,14 @@ class BodyTheme{
         localStorage.setItem('Theme-DARK','false')
     }
 
-}
+};
 
 const bodyColor = new BodyTheme({
     selector: 'body',
-    className:Theme.LIGHT
-})
+    className: Theme.LIGHT
+});
 
-switchToggle.addEventListener('change', onChangeTheme)
+switchToggle.addEventListener('change', onChangeTheme);
 
 function onChangeTheme(e) {
     
@@ -72,5 +69,5 @@ function onChangeTheme(e) {
     else {
        bodyColor.lightThem()
     }    
-}
+};
 
